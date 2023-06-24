@@ -3,6 +3,9 @@
     <h1>New User Register For DevOps Learning</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
+    <label for="Name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Full Name" name="Name" id="Name" required>
+    <br>
      
     <label for="Email"><b>Enter Email</b></label>
     <input type="text" placeholder="Enter Full Email" name="Name" id="Name" required>
@@ -16,7 +19,7 @@
     <input type="text" placeholder="Enter Email" name="email" id="email" required>
     <br>
 
-    <label for="psw"><b>Password</b></label>
+    <label for="pswd"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
     <br>
 
