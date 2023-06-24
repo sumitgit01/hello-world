@@ -223,6 +223,7 @@
   <prerequisites>
     <maven>3.0.3</maven>
   </prerequisites>
+  <!--
     <distributionManagement>      
       <repository>
         <id>release</id>
@@ -233,4 +234,5 @@
         <url>http://192.168.68.117:8081/repository/devops-release-snapshot/</url>
       </snapshotRepository>
     </distributionManagement>
+    -->
 </project>
