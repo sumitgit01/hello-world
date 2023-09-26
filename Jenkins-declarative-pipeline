@@ -1,0 +1,10 @@
+pipeline{
+    agent any
+    stages{
+        stage("Git_credentials"){
+    steps{
+        git credentialsId: 'github', url: 'https://github.com/sumitgit01/hello-world.git'
+    }
+    }
+}
+}
