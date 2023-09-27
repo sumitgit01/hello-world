@@ -13,14 +13,14 @@ pipeline{
 stage("Maven Build"){
     steps{
             sh "mvn clean package"
-            sh "mv /var/lib/jenkins/workspace/frist_declarative_pipeline/webapp/target/*.war /var/lib/jenkins/workspace/frist_declarative_pipeline/webapp/target/myweb.war"
+            sh "mv /var/lib/jenkins/workspace/first_declarative_pipeline/webapp/target/*.war /var/lib/jenkins/workspace/first_declarative_pipeline/webapp/target/myweb.war"
 }
 }
 stage("deploy-dev"){
     steps{
 sshagent(['tomcat-new']) {
     sh """
-        scp -o StrictHostKeyChecking=no target/myweb.war jenkins@192.168.107.181:/datadisk/tomcat/webapps/
+        scp -o StrictHostKeyChecking=no target/myweb.war jenkins@192.168.68.117:/datadisk/tomcat/webapps/
         ssh jenkins@192.168.107.181 /datadisk/tomcat/bin/shutdown.sh
         ssh jenkins@192.168.107.181 /datadisk/tomcat/bin/startup.sh
     """    
