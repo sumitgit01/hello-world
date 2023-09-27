@@ -17,12 +17,14 @@ stage("Maven Build"){
 }
 }
 stage("deploy-dev"){
+    steps{
 sshagent(['tomcat-new']) {
     sh """
         scp -o StrictHostKeyChecking=no target/myweb.war jenkins@192.168.107.181:/datadisk/tomcat/webapps/
         ssh jenkins@192.168.107.181 /datadisk/tomcat/bin/shutdown.sh
         ssh jenkins@192.168.107.181 /datadisk/tomcat/bin/startup.sh
-    """      
+    """    
+    }  
 }
 }
 }
