@@ -21,7 +21,6 @@ stage("deploy-dev"){
     sh """
         echo $workspace
         cp $workspace/webapp/target/myweb.war /datadisk/tomcat/webapps/
-        if 
         sh /datadisk/tomcat/bin/startup.sh
     """    
     }  
