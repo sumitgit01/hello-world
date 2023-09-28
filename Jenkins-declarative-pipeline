@@ -21,8 +21,8 @@ stage("deploy-dev"){
 sshagent(['tomcat-new']) {
     sh """
         cp StrictHostKeyChecking=no target/myweb.war jenkins@192.168.195.181:/datadisk/tomcat/webapps/
-        ssh jenkins@192.168.195.181 /datadisk/tomcat/bin/shutdown.sh
-        ssh jenkins@192.168.195.181 /datadisk/tomcat/bin/startup.sh
+        sh /datadisk/tomcat/bin/shutdown.sh
+        sh /datadisk/tomcat/bin/startup.sh
     """    
     }  
 }
