@@ -19,7 +19,7 @@ stage("Maven Build"){
 stage("deploy-dev"){
     steps{
     sh """
-        echo $pwd
+        echo $workspace
         cp target/myweb.war /datadisk/tomcat/webapps/
         sh /datadisk/tomcat/bin/shutdown.sh
         sh /datadisk/tomcat/bin/startup.sh
